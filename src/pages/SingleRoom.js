@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SingleRoom extends Component {
-  render() {
-    return <div>Hello from single room</div>;
-  }
+export default function SingleRoom() {
+  return <div>Hello from single Room</div>;
 }
