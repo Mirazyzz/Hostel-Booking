@@ -13,6 +13,14 @@ class RoomProvider extends Component {
       sortedRooms: [],
       featuredRooms: [],
       loading: true,
+      type: 'all',
+      capacity: '1',
+      minPrice: 500,
+      maxPrice: 1200,
+      minSize: 5,
+      maxSize: 20,
+      breakfast: false,
+      pets: false,
     };
   }
 
@@ -47,9 +55,27 @@ class RoomProvider extends Component {
     return room;
   };
 
+  handleChange = (event) => {
+    const type = event.target.type;
+    const name = event.target.name;
+    const value = event.target.value;
+
+    console.log(type, name, value);
+  };
+
+  filterRooms = () => {
+    console.log('yes filter everything');
+  };
+
   render() {
     return (
-      <RoomContext.Provider value={{ ...this.state, getRoom: this.getRoom }}>
+      <RoomContext.Provider
+        value={{
+          ...this.state,
+          getRoom: this.getRoom,
+          handleChange: this.handleChange,
+        }}
+      >
         {this.props.children}
       </RoomContext.Provider>
     );
