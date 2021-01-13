@@ -9,6 +9,7 @@ const getUnique = (items, value) => {
 };
 
 const formatForSelectBox = (types) => {
+  types.sort();
   return types.map((item, index) => {
     return (
       <option value={item} key={index}>
