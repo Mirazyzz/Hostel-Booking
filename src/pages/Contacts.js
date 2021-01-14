@@ -1,5 +1,13 @@
 import React from 'react';
 
+import MapSection from '../components/Map';
+
+const location = {
+  address: 'Poland, Warsaw, Bartycka 16A',
+  lat: 52.21268,
+  lng: 21.07049,
+};
+
 export default function Contacts() {
   return (
     <div className="contact-section">
@@ -43,6 +51,7 @@ export default function Contacts() {
           <input type="submit" name="submit" class="send-btn" value="Send" />
         </form>
       </div>
+      <MapSection location={location} zoomLevel={17} /> {/* include it here */}
     </div>
   );
 }
