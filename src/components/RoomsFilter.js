@@ -1,7 +1,10 @@
 import { React, useContext } from 'react';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
 import { RoomContext } from '../Context';
-import Title from '../components/Title';
+import Title from './Title';
+import CustomDatePicker from './CustomDatePicker';
 
 // get unique values of rooms data
 const getUnique = (items, value) => {
@@ -101,7 +104,7 @@ export default function RoomsFilter({ rooms }) {
 
           {/*end price */}
 
-          {/* size */}
+          {/* size
           <div className="form-group">
             <label htmlFor="size">room size</label>
             <div className="size-inputs">
@@ -122,9 +125,17 @@ export default function RoomsFilter({ rooms }) {
                 className="size-input"
               />
             </div>
-          </div>
+          </div> */}
           {/*end of size */}
-
+          <div className="form-group">
+            <CustomDatePicker
+              month={new Date(2018, 8)}
+              fromMonth={new Date(2018, 8)}
+              toMonth={new Date(2018, 11)}
+              fixedWeeks
+              keepFocus={false}
+            />
+          </div>
           {/* extras 
           
           <div className="form-group">

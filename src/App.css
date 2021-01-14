@@ -555,8 +555,8 @@ h6 {
 }
 
 .contact-form .text-box {
-  background: #000;
-  color: #fff;
+  background: rgb(243, 243, 243);
+  color: rgb(49, 45, 45);
   border: none;
   width: calc(45% - 10px);
   height: 50px;
@@ -573,8 +573,8 @@ h6 {
 }
 
 .contact-form textarea {
-  background: #000;
-  color: rgb(49, 199, 111);
+  background: rgb(243, 243, 243);
+  color: rgb(49, 45, 45);
   border: none;
   width: 90%;
   padding: 12px;
