@@ -125,7 +125,8 @@ export default function RoomsFilter({ rooms }) {
           </div>
           {/*end of size */}
 
-          {/* extras */}
+          {/* extras 
+          
           <div className="form-group">
             <div className="single-extra">
               <input
@@ -148,6 +149,7 @@ export default function RoomsFilter({ rooms }) {
               <label htmlFor="pets">pets</label>
             </div>
           </div>
+          */}
           {/* end of extras */}
         </form>
       </form>

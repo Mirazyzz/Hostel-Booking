@@ -441,7 +441,7 @@ h6 {
 }
 .roomslist-center {
   width: 80vw;
-  margin: 0 auto;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-row-gap: 2rem;
@@ -526,7 +526,7 @@ h6 {
   color: rgb(82, 214, 137);
   max-width: 500px;
   line-height: 65px;
-  padding-left: 50px;
+  padding-left: 10px;
   font-size: 18px;
 }
 
@@ -557,9 +557,9 @@ h6 {
   background: #000;
   color: #fff;
   border: none;
-  width: calc(50% - 10px);
+  width: calc(45% - 10px);
   height: 50px;
-  padding: 12px;
+  padding: 10px;
   font-size: 15px;
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -575,7 +575,7 @@ h6 {
   background: #000;
   color: rgb(49, 199, 111);
   border: none;
-  width: 100%;
+  width: 90%;
   padding: 12px;
   font-size: 15px;
   min-height: 200px;
@@ -588,7 +588,7 @@ h6 {
 }
 
 .contact-form .send-btn {
-  float: right;
+  float: center;
   background: #2e94e3;
   color: #fff;
   border: none;
@@ -664,26 +664,30 @@ h6 {
   padding: 20px;
   padding-left: 10px;
   text-align: center;
+  color: rgb(24, 119, 197);
 }
 
 .google-map {
   width: 100%;
   height: 60vh;
+  padding: 20px;
+  margin: 0 0 25 25px;
+  float: left;
 }
 
 .pin {
   display: flex;
   align-items: center;
-  width: 180px;
+  width: 100px;
   color: var(--main-blue);
 }
 
 .pin-icon {
-  font-size: 4rem;
+  font-size: 0rem;
 }
 
 .pin-text {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 @media screen and (min-width: 799px) {
@@ -706,3 +710,63 @@ h6 {
 }
 
 /* end of google maps */
+
+/* about page services list */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10rem;
+  text-align: center; /* new */
+  margin: 2.5rem;
+}
+
+.about-description,
+.hostel-services-list {
+  padding: 5px;
+}
+
+.about-description p {
+  color: #5f4c06;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.hostel-services-list {
+  width: 50%;
+}
+
+.hostel-services-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  color: #685206;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 1.3em;
+}
+
+.services-list li:before {
+  content: '\f00c'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.about-title {
+  text-align: center;
+  color: cadetblue;
+  margin: 1.5rem;
+}
+
+/* end of about page services list */
