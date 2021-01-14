@@ -5,7 +5,6 @@ import Banner from '../components/Banner';
 import FeaturedRooms from '../components/FeaturedRooms';
 import { Link } from 'react-router-dom';
 import Services from '../components/Services';
-import StyledHero from '../components/StyledHero';
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <Hero>
         <Banner
           title="luxurious rooms"
-          subTitle="deluxe rooms starting at $ 299"
+          subTitle="deluxe rooms starting at 600 pln"
         >
           <Link to="/rooms" className="btn-primary">
             Our rooms
