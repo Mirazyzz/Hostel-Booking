@@ -12,25 +12,16 @@ import 'moment/locale/pl';
 export default class DatePicker extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDayChange = this.handleDayChange.bind(this);
-    this.state = {
-      selectedDay: undefined,
-      isEmpty: true,
-      isDisabled: false,
-    };
+    this.handleDayClick = this.handleDayClick.bind(this);
   }
 
-  handleDayChange(selectedDay, modifiers, dayPickerInput) {
-    const input = dayPickerInput.getInput();
-    this.setState({
-      selectedDay,
-      isEmpty: !input.value.trim(),
-      isDisabled: modifiers.disabled === true,
-    });
+  handleDayClick(day, { selected }) {
+    if (!selected) {
+      this.props.onDayClick(formatDate(day));
+    }
   }
 
   render() {
-    const { selectedDay, isDisabled, isEmpty } = this.state;
     return (
       <div>
         <p>Sort by date</p>
@@ -40,6 +31,7 @@ export default class DatePicker extends React.Component {
           format="LL"
           placeholder={`${formatDate(new Date())}`}
           dayPickerProps={{
+            onDayClick: this.handleDayClick,
             locale: 'PL',
             localeUtils: MomentLocaleUtils,
             fromMonth: new Date(),

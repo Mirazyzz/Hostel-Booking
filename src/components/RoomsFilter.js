@@ -1,10 +1,9 @@
 import { React, useContext } from 'react';
-import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import { RoomContext } from '../Context';
 import Title from './Title';
-import CustomDatePicker from './CustomDatePicker';
+import DatePicker from './CustomDatePicker';
 
 // get unique values of rooms data
 const getUnique = (items, value) => {
@@ -26,18 +25,14 @@ export default function RoomsFilter({ rooms }) {
   const context = useContext(RoomContext);
   const {
     handleChange,
+    handleDayClick,
     type,
     capacity,
     price,
     minPrice,
     maxPrice,
-    minSize,
-    maxSize,
-    breakfast,
-    pets,
+    selectedDate,
   } = context;
-
-  console.log(`filter: ${breakfast} ${pets}`);
 
   let types = getUnique(rooms, 'type');
   // add 'all' type
@@ -128,13 +123,8 @@ export default function RoomsFilter({ rooms }) {
           </div> */}
           {/*end of size */}
           <div className="form-group">
-            <CustomDatePicker
-              month={new Date(2018, 8)}
-              fromMonth={new Date(2018, 8)}
-              toMonth={new Date(2018, 11)}
-              fixedWeeks
-              keepFocus={false}
-            />
+            <DatePicker keepFocus={false} onDayClick={handleDayClick} />
+            <p>{selectedDate}</p>
           </div>
           {/* extras 
           

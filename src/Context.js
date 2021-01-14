@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 //import items from './data';
 import Client from './Contentful';
 
-Client.getEntries({ content_type: 'hostelRoom' }).then((response) =>
-  console.log(response)
-);
-
 const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
@@ -27,6 +23,7 @@ class RoomProvider extends Component {
       maxSize: 1000,
       breakfast: false,
       pets: false,
+      selectedDate: undefined,
     };
   }
 
@@ -85,25 +82,17 @@ class RoomProvider extends Component {
     this.setState({ [name]: value }, this.filterRooms);
   };
 
+  handleDayClick = (day) => {
+    this.setState({ selectedDate: day }, this.filterRooms);
+  };
+
   filterRooms = () => {
-    let {
-      rooms,
-      type,
-      capacity,
-      price,
-      minPrice,
-      maxPrice,
-      minSize,
-      maxSize,
-      breakfast,
-      pets,
-    } = this.state;
+    let { rooms, type, capacity, price, selectedDate } = this.state;
     // all the rooms
     let tempRooms = [...rooms];
     //console.log(tempRooms);
     // transform values
     capacity = Number(capacity);
-
     // price
     price = Number(price);
     // filter by type
@@ -125,7 +114,10 @@ class RoomProvider extends Component {
     // filter by price
     tempRooms = tempRooms.filter((room) => room.price <= price);
     //console.log(tempRooms);
-    // filter by size
+
+    // filter by Date
+
+    //tempRooms = tempRooms.filter((room) => room.avialableFrom <= selectedDate);
 
     /*
     tempRooms = tempRooms.filter(
@@ -134,6 +126,7 @@ class RoomProvider extends Component {
     */
     //console.log(tempRooms);
     // filter by breakfast
+    /*
     if (breakfast) {
       tempRooms = tempRooms.filter((room) => room.breakfast === true);
     }
@@ -143,17 +136,22 @@ class RoomProvider extends Component {
       tempRooms = tempRooms.filter((room) => room.pets === true);
     }
     //console.log(tempRooms);
+    */
+
     // update state
     this.setState({ sortedRooms: tempRooms });
   };
 
   render() {
+    const date = this.state.selectedDate;
+    console.log(date);
     return (
       <RoomContext.Provider
         value={{
           ...this.state,
           getRoom: this.getRoom,
           handleChange: this.handleChange,
+          handleDayClick: this.handleDayClick,
         }}
       >
         {this.props.children}
