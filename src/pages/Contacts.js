@@ -17,13 +17,13 @@ export default function Contacts() {
             <i class="fas fa-map-marker-alt"></i>Bartycka 16A, 00-716, Warszawa,
           </div>
           <div>
-            <i class="fas fa-envelope"></i>contact@email.com
+            <i class="fas fa-envelope"></i>tadeusz@bist.pl
           </div>
           <div>
             <i class="fas fa-phone"></i>+00 0000 000 000
           </div>
           <div>
-            <i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM
+            <i class="fas fa-clock"></i>Mon - Fri 9:00 - 18:00
           </div>
         </div>
         <div className="contact-form">

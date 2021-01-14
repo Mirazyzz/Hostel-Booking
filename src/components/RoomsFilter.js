@@ -50,7 +50,7 @@ export default function RoomsFilter({ rooms }) {
 
   return (
     <section className="filter-container">
-      <Title title="search rooms" />
+      <Title title="Search Rooms" />
       <form className="filter-form">
         {/*select type */}
         <form className="filter-form">
