@@ -84,7 +84,7 @@ class RoomProvider extends Component {
   };
 
   handlePriceChange = (newValue) => {
-    console.log(newValue);
+    //console.log(newValue);
     this.setState({ price: newValue }, this.filterRooms);
   };
 
@@ -106,13 +106,13 @@ class RoomProvider extends Component {
     if (type !== 'all') {
       tempRooms = tempRooms.filter((room) => room.type === type);
     }
-    console.log(tempRooms);
+    //console.log(tempRooms);
 
     // filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter((room) => room.capacity >= capacity);
     }
-    console.log(tempRooms);
+    //console.log(tempRooms);
     /*
     tempRooms.forEach((el) =>
       console.log(`rooms price: ${el.price} - ${price}`)
@@ -121,12 +121,12 @@ class RoomProvider extends Component {
 
     // filter by price
     tempRooms = tempRooms.filter((room) => room.price <= price);
-    console.log(tempRooms);
+    //console.log(tempRooms);
 
     // filter by Date
     if (selectedDate)
       tempRooms = tempRooms.filter(
-        (room) => room.avialableFrom <= selectedDate
+        (room) => room.avialableFrom <= formatDate(selectedDate)
       );
 
     /*
