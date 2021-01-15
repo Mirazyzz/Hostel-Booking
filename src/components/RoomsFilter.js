@@ -87,7 +87,6 @@ export default function RoomsFilter({ rooms }) {
 
           {/*room price */}
           <div className="form-group">
-            <label htmlFor="price">Sort rooms by price</label>
             <Slider
               className="form-control"
               marks={prices}
@@ -122,6 +121,7 @@ export default function RoomsFilter({ rooms }) {
           </div> */}
           {/*end of size */}
           <div className="form-group">
+            <label htmlFor="selectedDate">Choose day</label>
             <DateTimePicker
               className="form-control"
               selectedDate={selectedDate}

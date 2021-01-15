@@ -9,7 +9,6 @@ import {
 
 const DatePicker = (props) => {
   const handleDateChange = (date) => {
-    console.log(date);
     props.handleDateChange(date);
   };
 
@@ -19,7 +18,7 @@ const DatePicker = (props) => {
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Date picker dialog"
+          label="Choose check-in day"
           format="MM/dd/yyyy"
           value={props.selectedDate}
           minDate={new Date()}
