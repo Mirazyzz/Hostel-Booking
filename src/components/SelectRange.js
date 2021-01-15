@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
 const PrettoSlider = withStyles({
@@ -32,7 +31,7 @@ const PrettoSlider = withStyles({
     borderRadius: 4,
   },
   mark: {
-    backgroundColor: '#A9A9A9',
+    backgroundColor: '#505050',
     height: 14,
     width: 3,
     marginTop: -3,

@@ -1,5 +1,3 @@
-import { FaCreativeCommons } from 'react-icons/fa';
-
 import React from 'react';
 
 export default function Banner({ title, subTitle, children }) {

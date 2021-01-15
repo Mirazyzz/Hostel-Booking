@@ -82,12 +82,8 @@ class RoomProvider extends Component {
     return room;
   };
 
-  handleChange = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = event.target.name;
-
-    this.setState({ [name]: value }, this.filterRooms);
+  handleChange = (typeName, newValue) => {
+    this.setState({ [typeName]: newValue }, this.filterRooms);
   };
 
   handlePriceChange = (newValue) => {

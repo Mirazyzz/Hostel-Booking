@@ -5,12 +5,14 @@ import { RoomContext } from '../Context';
 import Title from './Title';
 import DateTimePicker from './DatePicker';
 import Slider from './SelectRange';
+import NativeSelects from './Select';
 
 // get unique values of rooms data
 const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
+/*
 const formatForSelectBox = (types) => {
   types.sort();
   return types.map((item, index) => {
@@ -21,6 +23,7 @@ const formatForSelectBox = (types) => {
     );
   });
 };
+*/
 
 export default function RoomsFilter({ rooms }) {
   const context = useContext(RoomContext);
@@ -40,15 +43,12 @@ export default function RoomsFilter({ rooms }) {
 
   let types = getUnique(rooms, 'type');
   // add 'all' type
-  types = ['all', ...types];
+  types = ['all', ...types].sort((a, b) => a.length - b.length);
 
   // get data in JSX format
-  types = formatForSelectBox(types);
+  //types = formatForSelectBox(types);
 
-  let guests = getUnique(rooms, 'capacity');
-
-  // get data in JSX format
-  guests = formatForSelectBox(guests);
+  let guests = getUnique(rooms, 'capacity').sort();
 
   return (
     <section className="filter-container">
@@ -57,36 +57,30 @@ export default function RoomsFilter({ rooms }) {
         {/*select type */}
         <form className="filter-form">
           <div className="form-group">
-            <label htmlFor="type">room type</label>
-            <select
-              name="type"
-              id="type"
-              value={type}
-              className="form-control"
-              onChange={handleChange}
-            >
-              {types}
-            </select>
+            <NativeSelects
+              items={types}
+              selectName="type"
+              title="room types"
+              handleChange={handleChange}
+            />
           </div>
           {/*end select type */}
 
           {/*guests */}
           <div className="form-group">
-            <label htmlFor="capacitly">guests</label>
-            <select
-              name="capacity"
-              id="capacity"
-              value={capacity}
-              className="form-control"
-              onChange={handleChange}
-            >
-              {guests}
-            </select>
+            <NativeSelects
+              items={guests}
+              selectName="capacity"
+              title="room capacity"
+              handleChange={handleChange}
+            />
           </div>
           {/*end guests */}
+          {/* <Select items={types} /> */}
 
           {/*room price */}
           <div className="form-group">
+            <label htmlFor="price">Sort rooms by price</label>
             <Slider
               className="form-control"
               marks={prices}
@@ -121,7 +115,6 @@ export default function RoomsFilter({ rooms }) {
           </div> */}
           {/*end of size */}
           <div className="form-group">
-            <label htmlFor="selectedDate">Choose day</label>
             <DateTimePicker
               className="form-control"
               selectedDate={selectedDate}
