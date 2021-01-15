@@ -33,11 +33,6 @@ export default function RoomsFilter({ rooms }) {
     handleChange,
     handleDayClick,
     handlePriceChange,
-    type,
-    capacity,
-    price,
-    minPrice,
-    maxPrice,
     selectedDate,
   } = context;
 

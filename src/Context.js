@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
-import MomentLocaleUtils, {
-  formatDate,
-  parseDate,
-} from 'react-day-picker/moment';
+import { formatDate } from 'react-day-picker/moment';
 
 //import items from './data';
 import Client from './Contentful';
