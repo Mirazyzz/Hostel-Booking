@@ -4,6 +4,7 @@ import 'react-day-picker/lib/style.css';
 import { RoomContext } from '../Context';
 import Title from './Title';
 import DateTimePicker from './DatePicker';
+import Slider from './SelectRange';
 
 // get unique values of rooms data
 const getUnique = (items, value) => {
@@ -23,9 +24,12 @@ const formatForSelectBox = (types) => {
 
 export default function RoomsFilter({ rooms }) {
   const context = useContext(RoomContext);
+  const prices = [...new Set(rooms.map((room) => room.price))];
+
   const {
     handleChange,
     handleDayClick,
+    handlePriceChange,
     type,
     capacity,
     price,
@@ -65,7 +69,13 @@ export default function RoomsFilter({ rooms }) {
             </select>
           </div>
           {/*end select type */}
-
+          <div className="form-group">
+            <Slider
+              marks={prices}
+              title="Choose price"
+              handleChange={handlePriceChange}
+            />
+          </div>
           {/*guests */}
           <div className="form-group">
             <label htmlFor="capacitly">guests</label>
