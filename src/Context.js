@@ -28,7 +28,7 @@ class RoomProvider extends Component {
       maxSize: 1000,
       breakfast: false,
       pets: false,
-      selectedDate: undefined,
+      selectedDate: new Date(),
     };
   }
 
@@ -91,7 +91,7 @@ class RoomProvider extends Component {
   };
 
   handleDayClick = (day) => {
-    this.setState({ selectedDate: day }, this.filterRooms);
+    this.setState({ selectedDate: formatDate(day) }, this.filterRooms);
   };
 
   filterRooms = () => {

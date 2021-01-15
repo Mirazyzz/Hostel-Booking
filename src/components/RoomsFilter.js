@@ -3,7 +3,7 @@ import 'react-day-picker/lib/style.css';
 
 import { RoomContext } from '../Context';
 import Title from './Title';
-import DatePicker from './CustomDatePicker';
+import DateTimePicker from './DatePicker';
 
 // get unique values of rooms data
 const getUnique = (items, value) => {
@@ -64,7 +64,6 @@ export default function RoomsFilter({ rooms }) {
               {types}
             </select>
           </div>
-
           {/*end select type */}
 
           {/*guests */}
@@ -123,7 +122,11 @@ export default function RoomsFilter({ rooms }) {
           </div> */}
           {/*end of size */}
           <div className="form-group">
-            <DatePicker keepFocus={false} onDayClick={handleDayClick} />
+            <DateTimePicker
+              className="form-control"
+              selectedDate={selectedDate}
+              handleDateChange={handleDayClick}
+            />
           </div>
           {/* extras 
           
