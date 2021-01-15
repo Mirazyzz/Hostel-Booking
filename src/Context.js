@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+import MomentLocaleUtils, {
+  formatDate,
+  parseDate,
+} from 'react-day-picker/moment';
+
 //import items from './data';
 import Client from './Contentful';
 
@@ -51,7 +56,7 @@ class RoomProvider extends Component {
         maxPrice,
       });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -60,6 +65,9 @@ class RoomProvider extends Component {
       let id = item.sys.id;
       let images = item.fields.images.map((image) => image.fields.file.url);
       let room = { ...item.fields, images, id };
+
+      // format date of the room
+      room.avialableFrom = formatDate(room.avialableFrom);
 
       return room;
     });
@@ -116,8 +124,10 @@ class RoomProvider extends Component {
     //console.log(tempRooms);
 
     // filter by Date
-
-    //tempRooms = tempRooms.filter((room) => room.avialableFrom <= selectedDate);
+    if (selectedDate)
+      tempRooms = tempRooms.filter(
+        (room) => room.avialableFrom <= selectedDate
+      );
 
     /*
     tempRooms = tempRooms.filter(
@@ -143,8 +153,6 @@ class RoomProvider extends Component {
   };
 
   render() {
-    const date = this.state.selectedDate;
-    console.log(date);
     return (
       <RoomContext.Provider
         value={{

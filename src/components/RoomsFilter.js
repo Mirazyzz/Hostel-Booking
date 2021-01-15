@@ -124,7 +124,6 @@ export default function RoomsFilter({ rooms }) {
           {/*end of size */}
           <div className="form-group">
             <DatePicker keepFocus={false} onDayClick={handleDayClick} />
-            <p>{selectedDate}</p>
           </div>
           {/* extras 
           
