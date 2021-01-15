@@ -69,13 +69,7 @@ export default function RoomsFilter({ rooms }) {
             </select>
           </div>
           {/*end select type */}
-          <div className="form-group">
-            <Slider
-              marks={prices}
-              title="Choose price"
-              handleChange={handlePriceChange}
-            />
-          </div>
+
           {/*guests */}
           <div className="form-group">
             <label htmlFor="capacitly">guests</label>
@@ -93,16 +87,12 @@ export default function RoomsFilter({ rooms }) {
 
           {/*room price */}
           <div className="form-group">
-            <label htmlFor="price">room price {price} pln</label>
-            <input
+            <label htmlFor="price">Sort rooms by price</label>
+            <Slider
               className="form-control"
-              type="range"
-              name="price"
-              min={minPrice}
-              max={maxPrice}
-              id="price"
-              value={price}
-              onChange={handleChange}
+              marks={prices}
+              title="Choose price"
+              handleChange={handlePriceChange}
             />
           </div>
 

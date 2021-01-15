@@ -67,11 +67,8 @@ export default function DiscreteSlider(props) {
 
   return (
     <div className={classes.root}>
-      <Typography id="discrete-slider-always" gutterBottom>
-        {props.title}
-      </Typography>
       <PrettoSlider
-        valueLabelDisplay="on"
+        valueLabelDisplay="auto"
         aria-label="pretto slider"
         valueLabelFormat={valueLabelFormat}
         defaultValue={marks[0].value}
