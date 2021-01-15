@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
 import Slider from '@material-ui/core/Slider';
 
 const PrettoSlider = withStyles({
@@ -66,6 +67,7 @@ export default function DiscreteSlider(props) {
 
   return (
     <div className={classes.root}>
+      <InputLabel>Choose price</InputLabel>
       <PrettoSlider
         valueLabelDisplay="auto"
         aria-label="pretto slider"
