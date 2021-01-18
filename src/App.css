@@ -86,6 +86,7 @@ h6 {
   margin: 2rem 0;
   padding: 1rem;
   letter-spacing: var(--mainSpacing);
+  height: 500px;
 }
 /* end of globals */
 /* Navbar */
@@ -459,6 +460,7 @@ h6 {
   .roomslist-center {
     width: 95vw;
     max-width: 1170px;
+    min-height: 500px;
   }
 }
 /* end of roomlist */
