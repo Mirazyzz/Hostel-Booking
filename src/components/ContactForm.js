@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-//import axios from 'axios';
 
 const ContactForm = () => {
   const [result, setResult] = useState(null);
@@ -89,21 +88,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-/*
-
-console.log(templateId, user_id, variables);
-    window.emailjs
-      .send('gmail', templateId, user_id, variables)
-      .then((res) => {
-        setResult(res.data);
-        setState({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch(() => {
-        setResult({
-          success: false,
-          message:
-            'Something went wrong. Please, try again later or give us a call',
-        });
-      });
-*/
