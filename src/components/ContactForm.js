@@ -26,8 +26,9 @@ const ContactForm = () => {
       )
       .then(
         (res) => {
-          setResult({ success: true, message: 'Your email was delivered!' });
           setState({ name: '', email: '', subject: '', message: '' });
+          setResult({ success: true, message: 'Your email was delivered!' });
+          clearInputs();
         },
         (error) => {
           setResult({
@@ -47,6 +48,17 @@ const ContactForm = () => {
       ...state,
       [name]: value,
     });
+  };
+
+  const clearInputs = () => {
+    const inputs = document.querySelectorAll('input');
+    const textArea = document.querySelector('textArea');
+
+    for (let input of inputs) {
+      if (input.type !== 'submit') input.value = '';
+    }
+
+    textArea.value = '';
   };
 
   return (
