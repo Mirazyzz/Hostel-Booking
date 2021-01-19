@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
+//import axios from 'axios';
 
 const ContactForm = () => {
   const [result, setResult] = useState(null);
   const [state, setState] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   });
 
-  const sendEmail = (event) => {
-    event.preventDefault();
-    axios
-      .post('/send', { ...state })
-      .then((response) => {
-        setResult(response.data);
-        setState({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch(() => {
-        setResult({
-          success: false,
-          message:
-            'Something went wrong. Please, try again later or give us a call',
-        });
-      });
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_ax9bdmi',
+        'template_v1xi5uq',
+        e.target,
+        'user_AJnO0f8sRDthnfrz3PRUw',
+        {
+          name: state.name,
+          email: state.email,
+          message: state.message,
+        }
+      )
+      .then(
+        (res) => {
+          setResult({ success: true, message: 'Your email was delivered!' });
+          setState({ name: '', email: '', subject: '', message: '' });
+        },
+        (error) => {
+          setResult({
+            success: false,
+            message:
+              'Something went wrong. Please, try again later or give us a call',
+          });
+          console.log(error.text);
+        }
+      );
   };
 
   const onInputChange = (event) => {
@@ -75,3 +89,21 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+/*
+
+console.log(templateId, user_id, variables);
+    window.emailjs
+      .send('gmail', templateId, user_id, variables)
+      .then((res) => {
+        setResult(res.data);
+        setState({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch(() => {
+        setResult({
+          success: false,
+          message:
+            'Something went wrong. Please, try again later or give us a call',
+        });
+      });
+*/
