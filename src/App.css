@@ -137,7 +137,7 @@ h6 {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 6rem;
   background: var(--offWhite);
   z-index: 1;
 }
@@ -152,7 +152,7 @@ h6 {
   outline: none;
 }
 .nav-icon {
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   color: var(--primaryColor);
 }
 .nav-links {
@@ -168,7 +168,7 @@ h6 {
   color: var(--mainBlack);
   transition: var(--mainTransition);
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: var(--mainSpacing);
 }
@@ -179,13 +179,13 @@ h6 {
 .show-nav {
   height: 250px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1150px) {
   .nav-btn {
     display: none;
   }
   .nav-center {
-    max-width: 1170px;
-    margin: 0 auto;
+    max-width: 1250px;
+    margin: 2 auto;
     display: flex;
   }
   .nav-links {
