@@ -127,4 +127,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Credits
-This application was designed by [John Smilga](https://github.com/john-smilga) for his YouTube [course](https://www.youtube.com/watch?v=l0JbuMVXaTs&t=2959s). You can find about more about his courses [here](https://www.johnsmilga.com/).
+This application was [designed](https://github.com/john-smilga/react-beach-resort-project) by [John Smilga](https://github.com/john-smilga) for his YouTube [course](https://www.youtube.com/watch?v=l0JbuMVXaTs&t=2959s). You can find about more about his courses [here](https://www.johnsmilga.com/).
