@@ -21,11 +21,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 **_NOTE:_** before setting up the project on your local machine, you should add .env file to the project after you fork the repo. In the _.env_ file you need to have next dev variables:
 
-REACT_APP_MAPS_API_KEY=_Replace with your API Key from google console_
-REACT_APP_API_SPACE=_Replace with your API space key from Contentful API_
-REACT_APP_ACCESS_TOKEN=_Replace Access token from Contentful API_
-REACT_APP_EMAIL=_Replace with your UserID from Email.JS_
-REACT_APP_PASSWORD=_Access token from Email.JS_
+* REACT_APP_MAPS_API_KEY=_Replace with your API Key from google console_
+* REACT_APP_API_SPACE=_Replace with your API space key from Contentful API_
+* REACT_APP_ACCESS_TOKEN=_Replace Access token from Contentful API_
+* REACT_APP_EMAIL=_Replace with your UserID from Email.JS_
+* REACT_APP_PASSWORD=_Access token from Email.JS_
 
 ## Available Scripts
 
