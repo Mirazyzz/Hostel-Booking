@@ -94,33 +94,27 @@ class RoomProvider extends Component {
 
   filterRooms = () => {
     let { rooms, type, capacity, price, selectedDate } = this.state;
+
     // all the rooms
     let tempRooms = [...rooms];
-    //console.log(tempRooms);
+
     // transform values
     capacity = Number(capacity);
-    // price
-    price = Number(price);
+    //price = Number(price);
 
     // filter by type
     if (type !== 'all') {
       tempRooms = tempRooms.filter((room) => room.type === type);
     }
-    //console.log(tempRooms);
 
     // filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter((room) => room.capacity >= capacity);
     }
     //console.log(tempRooms);
-    /*
-    tempRooms.forEach((el) =>
-      console.log(`rooms price: ${el.price} - ${price}`)
-    );
-    */
 
     // filter by price
-    tempRooms = tempRooms.filter((room) => room.price <= price);
+    //tempRooms = tempRooms.filter((room) => room.price <= price);
     //console.log(tempRooms);
 
     // filter by Date
@@ -128,25 +122,6 @@ class RoomProvider extends Component {
       tempRooms = tempRooms.filter(
         (room) => room.avialableFrom <= formatDate(selectedDate)
       );
-
-    /*
-    tempRooms = tempRooms.filter(
-      (room) => room.size >= minSize && room.size <= maxSize
-    );
-    */
-    //console.log(tempRooms);
-    // filter by breakfast
-    /*
-    if (breakfast) {
-      tempRooms = tempRooms.filter((room) => room.breakfast === true);
-    }
-    //console.log(tempRooms);
-    //filter by pets
-    if (pets) {
-      tempRooms = tempRooms.filter((room) => room.pets === true);
-    }
-    //console.log(tempRooms);
-    */
 
     // update state
     this.setState({ sortedRooms: tempRooms });
