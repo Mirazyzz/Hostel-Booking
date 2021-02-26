@@ -12,36 +12,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/*
-export default function MaterialSelect(props) {
-  const classes = useStyles();
-  const items = props.items.map((el) => (el = <MenuItem value={el} />));
-  console.log(`${items[0]} ->`);
-
-  const handleChange = (event) => {
-    //props.handleChange(event.target.value);
-  };
-
-  return (
-    <div className="form-group">
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">
-          Choose type of a room
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          defaultValue={items[0]}
-          onChange={handleChange}
-        >
-          {items}
-        </Select>
-      </FormControl>
-    </div>
-  );
-}
-*/
-
 export default function NativeSelects(props) {
   const classes = useStyles();
   const items = props.items.map((el) => (
