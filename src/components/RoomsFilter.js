@@ -44,6 +44,7 @@ export default function RoomsFilter({ rooms }) {
   //types = formatForSelectBox(types);
 
   let guests = getUnique(rooms, 'capacity').sort();
+  let pricesFor = ['1 day', '1 week', '1 month', '6 months'];
 
   return (
     <section className="filter-container">
@@ -64,9 +65,9 @@ export default function RoomsFilter({ rooms }) {
           {/*guests */}
           <div className="form-group">
             <NativeSelects
-              items={guests}
+              items={pricesFor}
               selectName="capacity"
-              title="room capacity"
+              title="Price for"
               handleChange={handleChange}
             />
           </div>
