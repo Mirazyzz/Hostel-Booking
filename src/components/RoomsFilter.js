@@ -12,19 +12,6 @@ const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
-/*
-const formatForSelectBox = (types) => {
-  types.sort();
-  return types.map((item, index) => {
-    return (
-      <option value={item} key={index}>
-        {item}
-      </option>
-    );
-  });
-};
-*/
-
 export default function RoomsFilter({ rooms }) {
   const context = useContext(RoomContext);
   const prices = [...new Set(rooms.map((room) => room.price))];
@@ -41,9 +28,7 @@ export default function RoomsFilter({ rooms }) {
   types = ['all', ...types].sort((a, b) => a.length - b.length);
 
   // get data in JSX format
-  //types = formatForSelectBox(types);
 
-  let guests = getUnique(rooms, 'capacity').sort();
   let pricesFor = ['1 day', '1 week', '1 month', '6 months'];
 
   return (
@@ -72,7 +57,6 @@ export default function RoomsFilter({ rooms }) {
             />
           </div>
           {/*end guests */}
-          {/* <Select items={types} /> */}
 
           {/*room price */}
           <div className="form-group">
@@ -83,32 +67,8 @@ export default function RoomsFilter({ rooms }) {
               handleChange={handlePriceChange}
             />
           </div>
-
           {/*end price */}
 
-          {/* size
-          <div className="form-group">
-            <label htmlFor="size">room size</label>
-            <div className="size-inputs">
-              <input
-                type="number"
-                name="minSize"
-                id="size"
-                value={minSize}
-                onChange={handleChange}
-                className="size-input"
-              />
-              <input
-                type="number"
-                name="maxSize"
-                id="size"
-                value={minSize}
-                onChange={handleChange}
-                className="size-input"
-              />
-            </div>
-          </div> */}
-          {/*end of size */}
           <div className="form-group">
             <DateTimePicker
               className="form-control"
@@ -116,32 +76,6 @@ export default function RoomsFilter({ rooms }) {
               handleDateChange={handleDayClick}
             />
           </div>
-          {/* extras 
-          
-          <div className="form-group">
-            <div className="single-extra">
-              <input
-                type="checkbox"
-                name="breakfast"
-                id="breakfast"
-                checked={breakfast}
-                onChange={handleChange}
-              />
-              <label htmlFor="breakfast">breakfast</label>
-            </div>
-            <div className="single-extra">
-              <input
-                type="checkbox"
-                name="pets"
-                id="pets"
-                checked={pets}
-                onChange={handleChange}
-              />
-              <label htmlFor="pets">pets</label>
-            </div>
-          </div>
-          */}
-          {/* end of extras */}
         </form>
       </form>
     </section>
